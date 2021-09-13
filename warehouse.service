@@ -12,7 +12,7 @@ RestartSec=1
 User=sol
 LimitNOFILE=65536
 LogRateLimitIntervalSec=0
-ExecStart=/home/sol/bin/warehouse.sh
+ExecStart=<path_to_warehouse.sh>
 
 [Install]
 WantedBy=multi-user.target
