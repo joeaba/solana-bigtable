@@ -46,10 +46,13 @@ In order to import Solana's Bigtable Instance, you'll first need to set own Bigt
 3. Select a location → Region → Zone.
 4. Choose the number of `Nodes` for the cluster, each node provides 8TB of storage (as of 09/12/21 at least 4 nodes are required).
 5. Create the following tables with the respective column family names:
-    * 'Table ID → Column Family Name'
-    * 'blocks → x'
-    * 'tx → x'
-    * 'tx-by-addr → x'
+
+| Table ID   | Column Family Name |
+| :--------- | :----------------: |
+| blocks     | x                  |
+| tx         | x                  |
+| tx-by-addr | x                  |
+
 6. It's very important to give the same `Table ID` and `Column Family Name` inside your Bigtable instance or the Dataflow job will fail.
 
 Alternatively, you create the tables by running the following commands through CLI:
