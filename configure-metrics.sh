@@ -9,7 +9,6 @@
 # The following directive disable complaints about unused variables in this
 # file:
 # shellcheck disable=2034
-#
 
 configureMetrics() {
   [[ -n $SOLANA_METRICS_CONFIG ]] || return 0
