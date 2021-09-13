@@ -23,8 +23,6 @@ source ~/service-env.sh
 #shellcheck source=/dev/null
 source ~/service-env-warehouse-*.sh
 
-~/bin/check-hostname.sh
-
 # Delete any zero-length snapshots that can cause validator startup to fail
 find /home/sol/ledger-snapshots -name 'snapshot-*' -size 0 -print -exec rm {} \; || true
 
