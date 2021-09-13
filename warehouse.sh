@@ -62,15 +62,15 @@ if [[ -z $MINIMUM_MINUTES_BETWEEN_ARCHIVE ]]; then
   MINIMUM_MINUTES_BETWEEN_ARCHIVE=1
 fi
 
-ledger_dir=/mnt/nvme1n1/ledger
-ledger_snapshots_dir=/home/sol/ledger-snapshots
+ledger_dir=<path_to_your_ledger>
+ledger_snapshots_dir=<path_to_your_ledger_snapshots>
 
 if [[ -f $exit_signal_file ]]; then
   echo $exit_signal_file present, refusing to start
   exit 0
 fi
 
-identity_keypair=~/identity/warehouse-identity-$ZONE.json
+identity_keypair=<path_to_your_identity_keypair>
 identity_pubkey=$(solana-keygen pubkey "$identity_keypair")
 
 datapoint_error() {
@@ -107,7 +107,7 @@ args=(
   --private-rpc
   --identity "$identity_keypair"
   --ledger "$ledger_dir"
-  --log /home/sol/logs/solana-validator.log
+  --log <path_to_your_logs>
   --no-voting
   --skip-poh-verify
   --enable-rpc-transaction-history
@@ -115,7 +115,7 @@ args=(
   --no-untrusted-rpc
   --init-complete-file ~/.init-complete
   --wal-recovery-mode skip_any_corrupted_record
-  --snapshots /home/sol/ledger-snapshots
+  --snapshots "$ledger_snapshots_dir"
 )
 
 if ! [[ $(solana --version) =~ \ 1\.4\.[0-9]+ ]]; then
