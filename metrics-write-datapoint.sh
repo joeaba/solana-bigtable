@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #
 # Send a metrics datapoint
-#
 
 point=$1
 if [[ -z $point ]]; then
