@@ -11,8 +11,6 @@ panic() {
   exit 1
 }
 
-~/bin/check-hostname.sh
-
 #shellcheck source=/dev/null
 source ~/service-env.sh
 
@@ -27,7 +25,7 @@ if [[ -z $STORAGE_BUCKET ]]; then
   exit 1
 fi
 
-identity_keypair=~/identity/warehouse-identity-$ZONE.json
+identity_keypair=<path_to_your_identity_keypair>
 identity_pubkey=$(solana-keygen pubkey "$identity_keypair")
 
 datapoint_error() {
